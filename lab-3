@@ -1,1 +1,65 @@
 https://colab.research.google.com/drive/1eofHlkzSGYLnbsBY6ni-WUL55rKUoIG1?usp=sharing
+IT12 -ROUGH CUT-HELLO SHOP FLOOR
+# lab03_hello.py
+name = input("Operator name: ")
+print(f"Hello, {name}!")
+IT-10: THE STANDARD-THE BATCH INSPECTOE LIVE
+# Batch Inspector
+accept_count = 0
+rework_count = 0
+scrap_count = 0
+
+for i in range(10):
+    diameter = float(input(f"Enter diameter for part {i+1}: "))
+    
+    # Standard tolerance logic
+    if 9.8 <= diameter <= 10.2:
+        print("ACCEPT")
+        accept_count += 1
+    elif 9.5 <= diameter < 9.8 or 10.2 < diameter <= 10.5:
+        print("REWORK")
+        rework_count += 1
+    else:
+        print("SCRAP")
+        scrap_count += 1
+
+print("\n--- Final Report ---")
+print(f"ACCEPT: {accept_count}, REWORK: {rework_count}, SCRAP: {scrap_count}")
+IT8-FINE-THE PALLET CLERK
+# Pallet Clerk
+total_parts = int(input("Enter total parts: "))
+box_size = int(input("Enter box size: "))
+
+full_boxes = total_parts // box_size
+loose_parts = total_parts % box_size
+
+print(f"Full boxes: {full_boxes}")
+print(f"Loose parts: {loose_parts}")
+print(f"boxes*size + loose == total: {full_boxes * box_size + loose_parts == total_parts}")
+IT6 PRECISION END OF SHIFT
+# lab03_shift.py
+accept_count = 0
+rework_count = 0
+scrap_count = 0
+
+for i in range(10):
+    diameter = float(input(f"Enter diameter for part {i+1}: "))
+    if 9.8 <= diameter <= 10.2:
+        print("ACCEPT")
+        accept_count += 1
+    elif 9.5 <= diameter < 9.8 or 10.2 < diameter <= 10.5:
+        print("REWORK")
+        rework_count += 1
+    else:
+        print("SCRAP")
+        scrap_count += 1
+
+box_size = 4
+full_boxes = accept_count // box_size
+loose_parts = accept_count % box_size
+
+print("\n--- Shift Closing Summary ---")
+print(f"Boxes: {full_boxes}")
+print(f"Loose: {loose_parts}")
+print(f"ACCEPT: {accept_count}, REWORK: {rework_count}, SCRAP: {scrap_count}")
+print(f"boxes*size + loose == total: {full_boxes * box_size + loose_parts == accept_count}")
